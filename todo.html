@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🧠 Smart Task Manager</title>
+  <link rel="stylesheet" href="todo.css">
+</head>
+<body>
+  <div class="box">
+    <h1>🧠 Smart Task Manager</h1>
+
+    <!-- Task Input Area -->
+    <div class="input-area">
+      <input type="text" id="newTaskInput" placeholder="Task Name">
+      <input type="text" id="taskCategory" placeholder="Category (Work, Study, etc.)">
+      <input type="date" id="taskDueDate">
+      <select id="taskPriority">
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
+      <input type="text" id="taskNotes" placeholder="Notes / Description">
+      <button onclick="createTask()">Add Task</button>
+    </div>
+
+    <!-- Filter & Sort Options -->
+    <div class="filter-area">
+      <select id="filterStatus" onchange="applyFilters()">
+        <option value="all">All Status</option>
+        <option value="Pending">Pending</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Completed">Completed</option>
+      </select>
+      <select id="sortTasks" onchange="applyFilters()">
+        <option value="default">Sort By</option>
+        <option value="priority">Priority</option>
+        <option value="dueDate">Due Date</option>
+      </select>
+      <input type="text" id="searchTask" placeholder="Search..." oninput="applyFilters()">
+    </div>
+
+    <!-- Task List -->
+    <ul id="taskBucket"></ul>
+
+    <!-- Analytics Dashboard -->
+    <button onclick="window.location.href='analytics.html'" class="dashboard-btn">📊 View Analytics Dashboard</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
